@@ -50,3 +50,6 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+/examples/rgb_light/MDK-ARM/rgb_light
+/examples/rgb_light/MDK-ARM/DebugConfig
