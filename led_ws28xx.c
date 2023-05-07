@@ -86,7 +86,7 @@ void ws28xx_set_node_all(uint8_t r, uint8_t g, uint8_t b)
 
 void ws28xx_init(void)
 {
-    ws28xx_set_node_all(00, 00, 00);
+    ws28xx_set_node_all(0, 0, 0);
     ws28xx_send();
 }
 

@@ -7,17 +7,17 @@
 #include "gpio.h"
 
 // 通过此处的宏定义选择使用PWM或者是SPI
-// #define LED_WS28XX_USING_PWM
-#define LED_WS28XX_USING_SPI
+#define LED_WS28XX_USING_PWM
+// #define LED_WS28XX_USING_SPI
 
 #define ONE_PULSE (143) // 1 码计数个数
 #define ZERO_PULSE (67) // 0 码计数个数
 // RESET码的时间长度=TOTAL_DMABUFF_LEN*1.25us
 
-#define LED_NUMS (100)    // led总个数
+#define LED_NUMS (256)    // led总个数
 #define LED_DATA_LEN (24) // led需要24个字节表示
 
-#define HALF_DMABUFF_LEN (20)                    // dma发送一次的灯珠个数
+#define HALF_DMABUFF_LEN (16)                    // dma发送一次的灯珠个数
 #define TOTAL_DMABUFF_LEN (HALF_DMABUFF_LEN * 2) // dma双缓冲区总长度（led个数为单位)
 
 extern uint8_t g_targetlight_color[3];

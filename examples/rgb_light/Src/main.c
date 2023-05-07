@@ -61,6 +61,10 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+uint8_t britness = 0;
+uint8_t blink_case = 0;
+uint8_t color_case = 0;
+
 /* USER CODE END 0 */
 
 /**
@@ -107,8 +111,47 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+
+    if(blink_case == 0)
+    {
+      britness++;
+      if(britness>=255)
+      {
+        blink_case = 1;
+
+      }
+    }
+    else
+    {
+      britness--;
+      if(britness<=0)
+      {
+        blink_case = 0;
+                color_case++;
+        if(color_case>=3)
+        {
+          color_case = 0;
+        }
+      }
+    }
+
+    if(color_case == 0)
+    {
+    ws28xx_set_node_all(0, 0, britness);
+    }
+    else if(color_case == 1)
+    {
+    ws28xx_set_node_all(0, britness, 0);
+    }
+    else
+    {
+    ws28xx_set_node_all(britness, 0, 0);
+    }
+
+
     ws28xx_send();
-    HAL_Delay(500);
+
+    HAL_Delay(10);
     // aRGB_led_show(0x7F123456);
   }
   /* USER CODE END 3 */
