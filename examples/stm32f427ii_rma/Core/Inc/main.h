@@ -57,10 +57,6 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define OLED_DC_Pin GPIO_PIN_9
-#define OLED_DC_GPIO_Port GPIOB
-#define CHARGE12MM_Pin GPIO_PIN_6
-#define CHARGE12MM_GPIO_Port GPIOI
 #define PWR1_CTRL_Pin GPIO_PIN_2
 #define PWR1_CTRL_GPIO_Port GPIOH
 #define PWR2_CTRL_Pin GPIO_PIN_3
@@ -69,14 +65,10 @@ void Error_Handler(void);
 #define PWR3_CTRL_GPIO_Port GPIOH
 #define PWR4_CTRL_Pin GPIO_PIN_5
 #define PWR4_CTRL_GPIO_Port GPIOH
-#define USER_KEY_Pin GPIO_PIN_2
-#define USER_KEY_GPIO_Port GPIOB
 #define LED_R_Pin GPIO_PIN_11
 #define LED_R_GPIO_Port GPIOE
 #define LED_G_Pin GPIO_PIN_14
 #define LED_G_GPIO_Port GPIOF
-#define OLED_RST_Pin GPIO_PIN_10
-#define OLED_RST_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

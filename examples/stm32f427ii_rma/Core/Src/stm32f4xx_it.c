@@ -55,14 +55,7 @@
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
-extern DMA_HandleTypeDef hdma_adc1;
-extern DMA_HandleTypeDef hdma_adc2;
-extern ADC_HandleTypeDef hadc1;
-extern ADC_HandleTypeDef hadc2;
-extern TIM_HandleTypeDef htim8;
-extern TIM_HandleTypeDef htim12;
-extern TIM_HandleTypeDef htim13;
-extern TIM_HandleTypeDef htim14;
+extern DMA_HandleTypeDef hdma_tim2_ch1;
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -206,91 +199,17 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
-  * @brief This function handles ADC1, ADC2 and ADC3 global interrupts.
+  * @brief This function handles DMA1 stream5 global interrupt.
   */
-void ADC_IRQHandler(void)
+void DMA1_Stream5_IRQHandler(void)
 {
-  /* USER CODE BEGIN ADC_IRQn 0 */
+  /* USER CODE BEGIN DMA1_Stream5_IRQn 0 */
 
-  /* USER CODE END ADC_IRQn 0 */
-  HAL_ADC_IRQHandler(&hadc1);
-  HAL_ADC_IRQHandler(&hadc2);
-  /* USER CODE BEGIN ADC_IRQn 1 */
+  /* USER CODE END DMA1_Stream5_IRQn 0 */
+  HAL_DMA_IRQHandler(&hdma_tim2_ch1);
+  /* USER CODE BEGIN DMA1_Stream5_IRQn 1 */
 
-  /* USER CODE END ADC_IRQn 1 */
-}
-
-/**
-  * @brief This function handles TIM8 break interrupt and TIM12 global interrupt.
-  */
-void TIM8_BRK_TIM12_IRQHandler(void)
-{
-  /* USER CODE BEGIN TIM8_BRK_TIM12_IRQn 0 */
-
-  /* USER CODE END TIM8_BRK_TIM12_IRQn 0 */
-  HAL_TIM_IRQHandler(&htim8);
-  HAL_TIM_IRQHandler(&htim12);
-  /* USER CODE BEGIN TIM8_BRK_TIM12_IRQn 1 */
-
-  /* USER CODE END TIM8_BRK_TIM12_IRQn 1 */
-}
-
-/**
-  * @brief This function handles TIM8 update interrupt and TIM13 global interrupt.
-  */
-void TIM8_UP_TIM13_IRQHandler(void)
-{
-  /* USER CODE BEGIN TIM8_UP_TIM13_IRQn 0 */
-
-  /* USER CODE END TIM8_UP_TIM13_IRQn 0 */
-  HAL_TIM_IRQHandler(&htim8);
-  HAL_TIM_IRQHandler(&htim13);
-  /* USER CODE BEGIN TIM8_UP_TIM13_IRQn 1 */
-
-  /* USER CODE END TIM8_UP_TIM13_IRQn 1 */
-}
-
-/**
-  * @brief This function handles TIM8 trigger and commutation interrupts and TIM14 global interrupt.
-  */
-void TIM8_TRG_COM_TIM14_IRQHandler(void)
-{
-  /* USER CODE BEGIN TIM8_TRG_COM_TIM14_IRQn 0 */
-
-  /* USER CODE END TIM8_TRG_COM_TIM14_IRQn 0 */
-  HAL_TIM_IRQHandler(&htim8);
-  HAL_TIM_IRQHandler(&htim14);
-  /* USER CODE BEGIN TIM8_TRG_COM_TIM14_IRQn 1 */
-
-  /* USER CODE END TIM8_TRG_COM_TIM14_IRQn 1 */
-}
-
-/**
-  * @brief This function handles DMA2 stream0 global interrupt.
-  */
-void DMA2_Stream0_IRQHandler(void)
-{
-  /* USER CODE BEGIN DMA2_Stream0_IRQn 0 */
-
-  /* USER CODE END DMA2_Stream0_IRQn 0 */
-  HAL_DMA_IRQHandler(&hdma_adc1);
-  /* USER CODE BEGIN DMA2_Stream0_IRQn 1 */
-
-  /* USER CODE END DMA2_Stream0_IRQn 1 */
-}
-
-/**
-  * @brief This function handles DMA2 stream2 global interrupt.
-  */
-void DMA2_Stream2_IRQHandler(void)
-{
-  /* USER CODE BEGIN DMA2_Stream2_IRQn 0 */
-
-  /* USER CODE END DMA2_Stream2_IRQn 0 */
-  HAL_DMA_IRQHandler(&hdma_adc2);
-  /* USER CODE BEGIN DMA2_Stream2_IRQn 1 */
-
-  /* USER CODE END DMA2_Stream2_IRQn 1 */
+  /* USER CODE END DMA1_Stream5_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */

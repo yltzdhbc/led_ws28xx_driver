@@ -182,26 +182,4 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* tim_baseHandle)
 
 /* USER CODE BEGIN 1 */
 
-// void HAL_TIM_PWM_PulseFinishedHalfCpltCallback(TIM_HandleTypeDef *htim)
-// {
-//     if(htim->Instance == TIM1)
-//     {
-//       if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1)
-//       {
-//         led_rgb_send_half_callback();
-//       }
-//     }
-// }
-
-// void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim)
-// {
-//     if(htim->Instance == TIM1)
-//     {
-//       if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1)
-//       {
-//         led_rgb_send_full_callback();
-//       }
-//     }
-// }
-
 /* USER CODE END 1 */

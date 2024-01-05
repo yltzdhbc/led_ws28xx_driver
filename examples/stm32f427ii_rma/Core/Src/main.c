@@ -18,16 +18,13 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "adc.h"
 #include "dma.h"
-#include "i2c.h"
-#include "spi.h"
 #include "tim.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "user_main.h"
+#include "led_ws28xx.h"
 
 /* USER CODE END Includes */
 
@@ -60,6 +57,9 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+uint8_t britness = 0;
+uint8_t blink_case = 0;
+uint8_t color_case = 0;
 
 /* USER CODE END 0 */
 
@@ -92,19 +92,10 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_DMA_Init();
-  MX_ADC1_Init();
-  MX_TIM14_Init();
-  MX_SPI1_Init();
-  MX_TIM13_Init();
-  MX_TIM12_Init();
-  MX_ADC2_Init();
-  MX_I2C2_Init();
-  MX_TIM8_Init();
-  MX_TIM4_Init();
-  MX_TIM5_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 
-  user_setup();
+  ws28xx_init();
 
   /* USER CODE END 2 */
 
@@ -115,7 +106,44 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    user_loop();
+//    if (blink_case == 0)
+//    {
+//      britness++;
+//      if (britness >= 255)
+//      {
+//        blink_case = 1;
+//      }
+//    }
+//    else
+//    {
+//      britness--;
+//      if (britness <= 0)
+//      {
+//        blink_case = 0;
+//        color_case++;
+//        if (color_case >= 3)
+//        {
+//          color_case = 0;
+//        }
+//      }
+//    }
+
+//    if (color_case == 0)
+//    {
+//      ws28xx_set_node_all(0, 0, britness);
+//    }
+//    else if (color_case == 1)
+//    {
+//      ws28xx_set_node_all(0, britness, 0);
+//    }
+//    else
+//    {
+//      ws28xx_set_node_all(britness, 0, 0);
+//    }
+
+//    ws28xx_send();
+
+    HAL_Delay(100);
   }
   /* USER CODE END 3 */
 }
