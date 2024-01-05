@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.ld": "linkerscript",
+        "*.csv": "csv (whitespace)",
+        "main.h": "c"
+    }
+}
